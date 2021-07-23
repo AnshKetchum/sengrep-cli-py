@@ -1,0 +1,16 @@
+Semgrep Report for test-files/test.js
+
+test-files/test.js
+severity:warning rule:input.my_pattern_id: Semgrep found a match
+19:      <input type="button" value="Update" className="ui positive icon button" />
+
+
+
+Semgrep Report for test-files/test2.js
+
+test-files/test2.js
+severity:warning rule:input.my_pattern_id_2: Semgrep found a match
+11:            <button type = 'submit'>Click to submit</button>
+
+
+

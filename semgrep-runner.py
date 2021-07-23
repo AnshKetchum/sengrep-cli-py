@@ -32,10 +32,11 @@ def run_semgrep(filename, config, output_filename, verbose = True):
     output  = output.decode('UTF-8')
 
     #Outputting Sengrep's output to the output file specified
-    output_format = 'a' if os.path.exists(output_filename) else 'w'
-    with open(output_filename, output_format) as f:
-        f.write(f'Semgrep Report for {filename}\n')
-        f.writelines(output);
+
+    with open(output_filename, 'a') as f:
+        print(f'Semgrep Report for {filename}\n', file=f)
+        print(output, file =f)
+        print(f'\n\n', file=f)
     
     if verbose:
         print(f'A file {output_filename} has been sucessfully created!')
@@ -49,10 +50,13 @@ def process_yml(yml_file, yml_file_path, settings):
     print('Processing: ', yml_file, yml_file_path)
 
 
-    output_file_path = os.path.join(settings['RUNNER_OUTPUT_DIRECTORY'], f'runner_output_{yml_file[0:yml_file.find(".yml")]} ') 
+    output_file_path = os.path.join(settings['RUNNER_OUTPUT_DIRECTORY'], f'runner_output_{yml_file[0:yml_file.find(".yml")]}.txt') 
+
+
     for path in settings['RUNNER_TEST_FILE_INPUT_DIRECTORIES']:
         for file_extension in settings['FILE_EXTENSIONS_TO_LOOK_FOR']:
             for test_filename in glob.glob(f'{path}/*.{file_extension}'):
+                print(test_filename)
                 run_semgrep(test_filename, yml_file_path, output_file_path, settings['shouldOutputBeVerbose'] == 'True')
 
 
