@@ -1,0 +1,3 @@
+test.js
+severity:warning rule:my_pattern_id: Semgrep found a match
+19:      <input type="button" value="Update" className="ui positive icon button" />
