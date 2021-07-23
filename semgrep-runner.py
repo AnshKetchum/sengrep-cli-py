@@ -4,7 +4,7 @@ import subprocess #Use the command line
 
 '''
 Ex of Calling Script: 
-python3 test_file.java test.yml
+python3 semgrep-runner.py test_file.java test.yml
 
 '''
 
