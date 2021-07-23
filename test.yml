@@ -9,3 +9,13 @@ rules:
   message: Semgrep found a match
   languages: [js]
   severity: WARNING
+- id: my_pattern_id_2
+  patterns:
+    - pattern-either: 
+      - pattern: |
+          <button type ='submit'>...</button>
+    - pattern-not-inside: |
+        <form onSubmit = {...}></form>
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
