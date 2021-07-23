@@ -1,23 +1,11 @@
 rules:
-  - id: find-unverified-transactions
-    languages:
-      - java
-    message: >
-      In $METHOD, there's a call to make_transaction() without first calling
-      verify_transaction() on the Transaction object.
-    patterns:
+- id: my_pattern_id
+  patterns:
+    - pattern-either: 
       - pattern: |
-          public $RETURN $METHOD(...){
-              ...
-              make_transaction($T);
-              ...
-          }
-      - pattern-not: |
-          public $RETURN $METHOD(...){
-              ...
-              verify_transaction(...);
-              ...
-              make_transaction(...);
-              ...
-          }
-    severity: ERROR
+          <input type="button"/>
+    - pattern-inside: |
+        <form onSubmit = {...}></form>
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
