@@ -46,14 +46,14 @@ def process_yml(yml_file, yml_file_path, settings):
         Load the directories where the fields 
 
     '''
-    print('Processing: ', yml_file)
+    print('Processing: ', yml_file, yml_file_path)
 
 
     output_file_path = os.path.join(settings['RUNNER_OUTPUT_DIRECTORY'], f'runner_output_{yml_file[0:yml_file.find(".yml")]} ') 
     for path in settings['RUNNER_TEST_FILE_INPUT_DIRECTORIES']:
         for file_extension in settings['FILE_EXTENSIONS_TO_LOOK_FOR']:
             for test_filename in glob.glob(f'{path}/*.{file_extension}'):
-                run_semgrep(test_filename, yml_file, output_file_path, settings['shouldOutputBeVerbose'] == 'True')
+                run_semgrep(test_filename, yml_file_path, output_file_path, settings['shouldOutputBeVerbose'] == 'True')
 
 
 def go(JSON_SETTINGS_FILE_PATH = 'runner_config.json'):
@@ -68,6 +68,8 @@ def go(JSON_SETTINGS_FILE_PATH = 'runner_config.json'):
         if os.path.exists(settings['RUNNER_OUTPUT_DIRECTORY']):
             shutil.rmtree(settings['RUNNER_OUTPUT_DIRECTORY'])
         os.mkdir(settings['RUNNER_OUTPUT_DIRECTORY'])
+
+
 
         for yml_path in settings['RUNNER_INPUT_YML_DIRECTORIES']:
             for filename in glob.glob(f'{yml_path}/*.yml'):

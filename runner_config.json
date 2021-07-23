@@ -2,6 +2,6 @@
     "RUNNER_OUTPUT_DIRECTORY": "output",
     "FILE_EXTENSIONS_TO_LOOK_FOR": ["js"],
     "RUNNER_TEST_FILE_INPUT_DIRECTORIES": ".",
-    "RUNNER_INPUT_YML_DIRECTORIES": ["."],
+    "RUNNER_INPUT_YML_DIRECTORIES": ["input"],
     "shouldOutputBeVerbose" : "true"
 }
