@@ -73,14 +73,10 @@ def go(JSON_SETTINGS_FILE_PATH = 'runner_config.json'):
             shutil.rmtree(settings['RUNNER_OUTPUT_DIRECTORY'])
         os.mkdir(settings['RUNNER_OUTPUT_DIRECTORY'])
 
-
-
         for yml_path in settings['RUNNER_INPUT_YML_DIRECTORIES']:
             for filename in glob.glob(f'{yml_path}/*.yml'):
                 directory, file_name = os.path.split(filename)
                 process_yml(file_name, filename, settings)
-
-
 
 go()
     

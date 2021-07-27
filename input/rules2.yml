@@ -1,0 +1,71 @@
+rules: 
+- id: React.useEffect #Rule #1
+  patterns:
+    - pattern-either: 
+      - pattern: |
+          setInterval(...)
+    - pattern-inside: |
+        React.useEffect(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
+
+- id: my_pattern_id #Rule #2
+  pattern: new Date()
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
+
+- id: React.useEffect #Rule #3
+  pattern: setInterval(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: ERROR
+
+- id: React.useEffect #Rule #4
+  pattern: clearInterval(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: ERROR
+
+- id: React.useEffect #Rule #5
+  pattern: setInterval(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: ERROR
+
+- id: React.useEffect #Rule #6
+  patterns:
+    - clearInterval(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: ERROR
+
+- id: React.useEffect #Rule #7
+  patterns:
+    - setInterval(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: ERROR
+
+- id: my_pattern_id #Rule 8
+  patterns:
+    - pattern-either: 
+      - pattern: |
+          <button type='submit'>...</button>
+    - pattern-inside: |
+        <form onSubmit = {handleSubmit}></form>
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
+
+- id: my_pattern_id #Rule 9
+  patterns:
+    - pattern-either: 
+      - pattern: |
+          <input type="button"/>
+    - pattern-inside: |
+        <form onSubmit = {...}></form>
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING

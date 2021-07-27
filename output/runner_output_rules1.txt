@@ -1,0 +1,12 @@
+Semgrep Report for test-files/test.js
+
+
+
+
+
+Semgrep Report for test-files/test2.js
+
+
+
+
+

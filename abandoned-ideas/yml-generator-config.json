@@ -1,0 +1,5 @@
+{
+    "CSV_FILENAME" : "queries.csv",
+    "OUTPUT_FILENAME" : "rules.yml",
+    "DELIMETER": "|"
+}
