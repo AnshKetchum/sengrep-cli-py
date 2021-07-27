@@ -35,15 +35,13 @@ rules:
   severity: ERROR
 
 - id: React.useEffect #Rule #6
-  patterns:
-    - clearInterval(...)
+  pattern: clearInterval(...)
   message: Semgrep found a match
   languages: [js]
   severity: ERROR
 
 - id: React.useEffect #Rule #7
-  patterns:
-    - setInterval(...)
+  pattern: setInterval(...)
   message: Semgrep found a match
   languages: [js]
   severity: ERROR
