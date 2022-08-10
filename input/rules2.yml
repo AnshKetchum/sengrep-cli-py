@@ -68,3 +68,51 @@ rules:
   message: Semgrep found a match
   languages: [js]
   severity: WARNING
+  
+  
+- id: my_pattern_id #Rule 10
+  patterns:
+    - pattern-either: 
+      - pattern: |
+          return(...)
+    - pattern-inside: |
+        React.useEffect(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
+
+
+- id: my_pattern_id #Rule 11
+  pattern: $X.replace(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
+
+
+- id: my_pattern_id #Rule 12
+  pattern: $X.setAttribute(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
+
+
+- id: my_pattern_id #Rule 13
+  pattern: document.getElementById(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
+
+
+- id: my_pattern_id #Rule 14
+  pattern: $X.delay(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
+
+
+- id: my_pattern_id #Rule 15
+  pattern: document.getElementsByClassName(...)
+  message: Semgrep found a match
+  languages: [js]
+  severity: WARNING
+"
