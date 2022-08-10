@@ -1,4 +1,5 @@
 rules: 
+  
 - id: React.useEffect #Rule #1
   patterns:
     - pattern-either: 
